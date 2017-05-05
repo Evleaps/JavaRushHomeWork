@@ -74,11 +74,12 @@ public class Solution {
             }
 
         }
-        if (f1 < stringsFile1.size()) {
-            linesAddREMOVED(stringsFile1.get(f1));
+        //если много дабавили или много удалили, цикл это отобразит в финальном списке
+        for (int k = f2; k < list2.size(); k++) {
+            lines.add(new LineItem(Type.ADDED, list2.get(k)));
         }
-        if (f2 < stringsFile2.size()) {
-            linesAddADDED(stringsFile2.get(f2));
+        for (int k = f1; k < list1.size(); k++) {
+            lines.add(new LineItem(Type.REMOVED, list1.get(f1)));
         }
 
 
